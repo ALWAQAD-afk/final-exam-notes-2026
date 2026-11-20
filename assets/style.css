@@ -26,7 +26,7 @@
 
 *,*::before,*::after{box-sizing:border-box}
 
-html{scroll-behavior:smooth; background:#070b14}
+html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
 }
@@ -165,8 +165,6 @@ h1 .year::after{
 
 .btn{
   --btn-bg:transparent;
-  background:var(--btn-bg);
-  color:var(--paper);
   display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
   font-family:var(--sans); font-size:.98rem; font-weight:700;
   padding:.9rem 1.6rem; border-radius:12px; border:1px solid transparent;
@@ -504,105 +502,6 @@ legend{font-size:.92rem; font-weight:700; color:var(--paper); margin-bottom:.7re
 }
 #escapeBtn:hover{background:rgba(30,40,62,.98)}
 
-/* ---------------------------------------------------------- مكتبة الملفات */
-.library__head{
-  display:flex; align-items:flex-end; justify-content:space-between;
-  gap:1rem; flex-wrap:wrap; margin-bottom:1.2rem;
-}
-.library__count{
-  font-size:.82rem; color:var(--muted-2);
-  border:1px solid var(--line-soft); border-radius:999px;
-  padding:.3rem .85rem; white-space:nowrap;
-}
-
-.tabs{
-  display:flex; gap:.45rem; flex-wrap:nowrap; overflow-x:auto;
-  padding-bottom:.6rem; margin-bottom:1.3rem;
-  scrollbar-width:none; -webkit-overflow-scrolling:touch;
-}
-.tabs::-webkit-scrollbar{display:none}
-.tab{
-  flex:0 0 auto;
-  font-family:var(--sans); font-size:.84rem; font-weight:500;
-  color:var(--muted); background:rgba(255,255,255,.025);
-  border:1px solid var(--line-soft); border-radius:999px;
-  padding:.5rem 1rem; cursor:pointer; white-space:nowrap;
-  transition:color .2s, border-color .2s, background .2s;
-  -webkit-tap-highlight-color:transparent;
-}
-.tab:hover{color:var(--paper); border-color:rgba(216,180,106,.35)}
-.tab.is-active{
-  color:#241a06; background:linear-gradient(180deg,#f0d69a,#d3ab5c);
-  border-color:transparent; font-weight:700;
-}
-
-.cards{
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr));
-  gap:.9rem;
-}
-.card{
-  display:flex; flex-direction:column; gap:.55rem;
-  padding:1.05rem 1.05rem 1rem;
-  border:1px solid var(--line-soft); border-radius:14px;
-  background:linear-gradient(180deg, rgba(255,255,255,.032), rgba(255,255,255,.008));
-  transition:border-color .25s, transform .25s var(--ease), background .25s;
-  min-width:0;
-}
-.card[hidden]{display:none}
-.card:hover{border-color:rgba(216,180,106,.32); transform:translateY(-2px); background:rgba(216,180,106,.045)}
-.card__top{display:flex; align-items:center; justify-content:space-between; gap:.6rem}
-.card__type{
-  font-size:.66rem; font-weight:700; letter-spacing:.06em;
-  padding:.12rem .5rem; border-radius:5px;
-  border:1px solid rgba(255,255,255,.16); color:var(--muted);
-}
-.card__type--pdf{color:#ffb3b0; border-color:rgba(224,96,92,.4); background:rgba(224,96,92,.08)}
-.card__type--zip{color:var(--gold-2); border-color:rgba(216,180,106,.4); background:rgba(216,180,106,.08)}
-.card__type--docx{color:#9ec5ff; border-color:rgba(120,160,240,.35); background:rgba(120,160,240,.08)}
-.card__type--pptx{color:#f5c08a; border-color:rgba(230,150,80,.35); background:rgba(230,150,80,.08)}
-.card__date{font-size:.66rem; color:var(--muted-2); white-space:nowrap}
-.card__title{font-size:1.02rem; color:var(--paper); line-height:1.5}
-.card__desc{font-size:.78rem; color:var(--muted-2); line-height:1.75; flex:1 1 auto}
-.card__meta{
-  list-style:none; display:flex; flex-wrap:wrap; gap:.3rem .55rem;
-  margin:.1rem 0 0; padding:0; font-size:.68rem; color:var(--muted-2);
-}
-.card__meta li{position:relative}
-.card__meta li + li::before{
-  content:"·"; position:absolute; inset-inline-start:-.36rem; color:rgba(255,255,255,.22);
-}
-.card__foot{
-  display:flex; align-items:center; justify-content:space-between; gap:.6rem;
-  margin-top:.45rem; padding-top:.65rem; border-top:1px solid var(--line-soft);
-}
-.card__file{
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  font-size:.68rem; color:var(--muted-2);
-  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0;
-}
-.btn--sm{
-  padding:.42rem .9rem; font-size:.78rem; border-radius:9px; flex:0 0 auto;
-  border-color:var(--line); color:var(--gold-2); background:rgba(216,180,106,.07);
-}
-.btn--sm:hover{background:rgba(216,180,106,.15); border-color:rgba(216,180,106,.5)}
-
-.hero__note{font-size:.76rem; color:var(--muted-2); margin-top:1.1rem; max-width:56ch}
-
-.modal__file{
-  font-size:.76rem; color:var(--muted);
-  border-inline-start:2px solid var(--gold);
-  background:rgba(216,180,106,.06);
-  padding:.45rem .75rem; border-radius:0 8px 8px 0;
-  margin:-.8rem 0 1.2rem;
-}
-.loader__file{font-size:.75rem; color:var(--muted-2); margin-top:.35rem; word-break:break-word}
-
-.footer__row{display:flex; align-items:center; justify-content:space-between; gap:.8rem; flex-wrap:wrap}
-.footer__org{font-size:.8rem; color:var(--muted-2)}
-.footer__links{display:flex; gap:1rem; flex-wrap:wrap; font-size:.78rem}
-.footer__links a{color:var(--muted-2); text-decoration:none}
-.footer__links a:hover{color:var(--gold-2)}
-
 /* --------------------------------------------------------------- استجابة */
 @media (max-width: 900px){
   .hero__grid{grid-template-columns:1fr}
@@ -618,7 +517,6 @@ legend{font-size:.92rem; font-weight:700; color:var(--paper); margin-bottom:.7re
   .brand__txt strong{font-size:1rem}
   .brand__txt span{font-size:.66rem}
   .cta-row .btn{width:100%}
-  .tabs{flex-wrap:wrap; overflow:visible; padding-bottom:0}
   .toc li{grid-template-columns:auto 1fr; gap:.7rem}
   .toc__p{grid-column:2; justify-self:start}
   .modal__actions .btn{flex:1 1 100%}
