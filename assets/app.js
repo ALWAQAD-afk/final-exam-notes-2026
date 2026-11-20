@@ -635,4 +635,9 @@
 
   /* احتياط: إن أُعيد تحميل الصفحة بعد المفاجأة، نبقى على البوابة */
   party.hidden = true;
+
+  /* هوك معاينة مؤقت (يُزال بعد الفحص البصري) */
+  const qs = new URLSearchParams(location.search);
+  if (qs.get('stage') === 'verify') openVerify();
+  if (qs.get('stage') === 'party') startParty();
 })();
