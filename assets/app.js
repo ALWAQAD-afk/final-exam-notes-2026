@@ -602,6 +602,11 @@
     }
   });
 
+  if (reduceMotion) {
+    motionToggle.setAttribute('aria-pressed', 'true');
+    motionToggle.textContent = 'تشغيل الحركة';
+  }
+
   motionToggle.addEventListener('click', () => {
     reduceMotion = !reduceMotion;
     motionToggle.setAttribute('aria-pressed', String(reduceMotion));
@@ -630,9 +635,4 @@
   /* احتياط: إن أُعيد تحميل الصفحة بعد المفاجأة، نبقى على البوابة */
   party.hidden = true;
 
-  /* هوك معاينة مؤقت (يُزال بعد الفحص البصري) */
-  const qs = new URLSearchParams(location.search);
-  if (qs.get('stage') === 'verify') openVerify();
-  if (qs.get('stage') === 'party') startParty();
-  if (qs.get('stage') === 'loading') startLoading();
 })();

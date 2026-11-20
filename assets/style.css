@@ -483,7 +483,7 @@ legend{font-size:.92rem; font-weight:700; color:var(--paper); margin-bottom:.7re
 .party__actions .btn{font-size:.88rem; padding:.75rem 1.2rem}
 .party__taunt{font-size:.78rem; color:var(--gold-2); min-height:1.5em; margin-top:.9rem}
 .party__toast{
-  position:absolute; z-index:9; bottom:1.2rem; inset-inline:0; margin-inline:auto;
+  position:absolute; z-index:9; bottom:5.6rem; inset-inline:0; margin-inline:auto;
   width:max-content; max-width:calc(100% - 2rem);
   background:rgba(12,19,34,.95); border:1px solid var(--line);
   color:var(--paper); font-size:.82rem; padding:.6rem 1rem; border-radius:999px;
