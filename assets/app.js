@@ -101,6 +101,51 @@
     }
   }
 
+  /* ====================================================== مكتبة الملفات */
+  const cardsWrap = $('#cards');
+  const libraryCount = $('#libraryCount');
+  const tabs = $$('.tab');
+  const cards = cardsWrap ? $$('.card', cardsWrap) : [];
+
+  function filesLabel(n) {
+    if (n === 1) return 'ملف واحد متاح';
+    if (n === 2) return 'ملفان متاحان';
+    if (n >= 3 && n <= 10) return n + ' ملفات متاحة';
+    return n + ' ملفًا متاحًا';
+  }
+
+  function applyFilter(cat, tab) {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+    });
+    let shown = 0;
+    cards.forEach((card) => {
+      const visible = cat === 'all' || card.dataset.cat === cat;
+      card.hidden = !visible;
+      if (visible) shown += 1;
+    });
+    libraryCount.textContent = filesLabel(shown);
+    cardsWrap.setAttribute('aria-labelledby', tab.id);
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.tabIndex = tab.classList.contains('is-active') ? 0 : -1;
+    tab.addEventListener('click', () => applyFilter(tab.dataset.cat, tab));
+    tab.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      const dir = e.key === 'ArrowLeft' ? 1 : -1;
+      const next = tabs[(i + dir + tabs.length) % tabs.length];
+      next.focus();
+      applyFilter(next.dataset.cat, next);
+    });
+  });
+
+  if (tabs.length && cardsWrap) applyFilter('all', tabs[0]);
+
   /* ====================================================== المرحلة الثانية */
   const verifyModal = $('#verifyModal');
   const verifyForm = $('#verifyForm');
@@ -109,7 +154,13 @@
   const pledge = $('#pledge');
   const verifyCard = $('.modal__card', verifyModal);
 
-  function openVerify() {
+  const verifyFile = $('#verifyFile');
+  const loaderFile = $('#loaderFile');
+  let pendingTitle = 'ملخص الامتحان النهائي — النسخة الكاملة';
+
+  function openVerify(title) {
+    if (title) pendingTitle = title;
+    if (verifyFile) verifyFile.textContent = 'الملف المطلوب: ' + pendingTitle;
     lastFocused = document.activeElement;
     verifyModal.hidden = false;
     lockScroll(true);
@@ -125,7 +176,12 @@
     if (lastFocused && lastFocused.focus) lastFocused.focus({ preventScroll: true });
   }
 
-  $('#downloadBtn').addEventListener('click', openVerify);
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.js-download');
+    if (!btn) return;
+    e.preventDefault();
+    openVerify(btn.dataset.title || '');
+  });
 
   $$('[data-close]', verifyModal).forEach((el) => {
     el.addEventListener('click', closeVerify);
@@ -247,6 +303,7 @@
     logEl.innerHTML = '';
     setPct(0);
     bar.classList.remove('is-stuck');
+    if (loaderFile) loaderFile.textContent = pendingTitle;
     loaderNote.textContent = NOTES[0];
     loaderNote.classList.remove('is-warn');
 

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الأرشيف الأكاديمي الرقمي — الملخصات والمقررات</title>
+<meta name="description" content="الأرشيف الأكاديمي الرقمي: ملخصات الميد والفاينل، بنوك الأسئلة، المشروعات، ومذكرات المحاضرات، مرتبة حسب المساق والفصل الدراسي.">
+<meta name="theme-color" content="#f6f4ee">
+<link rel="icon" href="assets/favicon-archive.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/archive.css">
+<script>window.__archiveStart = Date.now();</script>
+</head>
+<body>
+<a class="skip" href="#archive">تخطَّ إلى قائمة الملفات</a>
+
+<header class="site-head">
+  <div class="container">
+    <div class="head-top">
+      <span>الجامعة الوطنية الافتراضية</span>
+      <span>الفصل الدراسي الأول 2025/2026 · <span id="headDate">20 نوفمبر 2026</span></span>
+    </div>
+    <div class="head-main">
+      <div class="brandmark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M8 10h13a5 5 0 015 5v23a4 4 0 00-4-4H8z"/>
+          <path d="M40 10H27a5 5 0 00-5 5v23a4 4 0 014-4h14z"/>
+          <path d="M14 17h6M14 22h6M28 17h6M28 22h6"/>
+        </svg>
+      </div>
+      <div class="head-title">
+        <h1>الأرشيف الأكاديمي الرقمي</h1>
+        <p>مكتبة الملخصات والمقررات — كلية العلوم والآداب</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="archive">
+  <div class="container">
+    <div class="toolbar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <label class="sr-only" for="searchInput">البحث في الأرشيف</label>
+        <input id="searchInput" type="search" placeholder="ابحث باسم المادة أو رمز المساق أو اسم الملف…" autocomplete="off">
+      </div>
+      <div class="field">
+        <label class="sr-only" for="sortSelect">الترتيب</label>
+        <select id="sortSelect">
+          <option value="newest">الأحدث تحديثًا</option>
+          <option value="oldest">الأقدم تحديثًا</option>
+          <option value="alpha">أبجديًا</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="sr-only" for="termSelect">الفصل الدراسي</label>
+        <select id="termSelect">
+          <option value="all">كل الفصول</option>
+          <option value="first">الفصل الأول 2025/2026</option>
+          <option value="second">الفصل الثاني 2024/2025</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="chips" role="group" aria-label="تصفية حسب نوع الملف">
+      <button class="chip is-active" type="button" data-cat="all" aria-pressed="true">الكل</button>
+      <button class="chip" type="button" data-cat="midterm" aria-pressed="false">ملخصات الميد</button>
+      <button class="chip" type="button" data-cat="final" aria-pressed="false">ملخصات الفاينل</button>
+      <button class="chip" type="button" data-cat="quizzes" aria-pressed="false">الكويزات وبنوك الأسئلة</button>
+      <button class="chip" type="button" data-cat="projects" aria-pressed="false">المشروعات والتقارير</button>
+      <button class="chip" type="button" data-cat="notes" aria-pressed="false">مذكرات المحاضرات</button>
+    </div>
+
+    <div class="layout">
+      <section class="results" aria-labelledby="resultsTitle">
+        <div class="results__head">
+          <h2 id="resultsTitle">الملفات المتاحة</h2>
+          <p id="resultCount" aria-live="polite">20 ملفًا</p>
+        </div>
+
+        <ul class="list" id="list">
+          <li class="item" data-cat="midterm" data-title="ملخص الميد — مبادئ الإحصاء" data-file="stat101-midterm-v3.pdf" data-date="2026-11-12" data-term="first" data-search="ملخص الميد — مبادئ الإحصاء إحصاء 101 stat101-midterm-v3.pdf ملخصات الميد">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">ملخص الميد — مبادئ الإحصاء</h3>
+              <p class="item__meta">إحصاء 101 · 14 صفحة · 2.4 م.ب · آخر تحديث 12 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">stat101-midterm-v3.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="midterm" data-title="ملخص الميد — الرياضيات المتقطعة" data-file="math204-midterm-v2.pdf" data-date="2026-11-09" data-term="first" data-search="ملخص الميد — الرياضيات المتقطعة رياض 204 math204-midterm-v2.pdf ملخصات الميد">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">ملخص الميد — الرياضيات المتقطعة</h3>
+              <p class="item__meta">رياض 204 · 11 صفحة · 1.9 م.ب · آخر تحديث 9 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">math204-midterm-v2.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="midterm" data-title="ملخص الميد — مقدمة في البرمجة" data-file="cs110-midterm-v4.pdf" data-date="2026-11-05" data-term="first" data-search="ملخص الميد — مقدمة في البرمجة حاس 110 cs110-midterm-v4.pdf ملخصات الميد">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">ملخص الميد — مقدمة في البرمجة</h3>
+              <p class="item__meta">حاس 110 · 18 صفحة · 3.1 م.ب · آخر تحديث 5 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">cs110-midterm-v4.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="midterm" data-title="ملخص الميد — اللغة الإنجليزية الأكاديمية" data-file="eng102-midterm-v2.pdf" data-date="2026-11-02" data-term="first" data-search="ملخص الميد — اللغة الإنجليزية الأكاديمية إنج 102 eng102-midterm-v2.pdf ملخصات الميد">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">ملخص الميد — اللغة الإنجليزية الأكاديمية</h3>
+              <p class="item__meta">إنج 102 · 9 صفحات · 1.2 م.ب · آخر تحديث 2 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">eng102-midterm-v2.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="final" data-title="ملخص الفاينل — مبادئ الإحصاء" data-file="stat101-final-v5.pdf" data-date="2026-11-18" data-term="first" data-search="ملخص الفاينل — مبادئ الإحصاء إحصاء 101 stat101-final-v5.pdf ملخصات الفاينل">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">ملخص الفاينل — مبادئ الإحصاء</h3>
+              <p class="item__meta">إحصاء 101 · 22 صفحة · 3.8 م.ب · آخر تحديث 18 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">stat101-final-v5.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="final" data-title="ملخص الفاينل — قواعد البيانات" data-file="cs231-final-v3.pdf" data-date="2026-11-17" data-term="first" data-search="ملخص الفاينل — قواعد البيانات حاس 231 cs231-final-v3.pdf ملخصات الفاينل">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">ملخص الفاينل — قواعد البيانات</h3>
+              <p class="item__meta">حاس 231 · 26 صفحة · 4.2 م.ب · آخر تحديث 17 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">cs231-final-v3.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="final" data-title="ملخص الفاينل — الفيزياء العامة" data-file="phy101-final-v2.pdf" data-date="2026-11-15" data-term="first" data-search="ملخص الفاينل — الفيزياء العامة فيز 101 phy101-final-v2.pdf ملخصات الفاينل">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">ملخص الفاينل — الفيزياء العامة</h3>
+              <p class="item__meta">فيز 101 · 19 صفحة · 3.4 م.ب · آخر تحديث 15 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">phy101-final-v2.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="final" data-title="ملخص الفاينل — تاريخ الأردن الحديث" data-file="hist120-final-v2.pdf" data-date="2026-11-11" data-term="first" data-search="ملخص الفاينل — تاريخ الأردن الحديث تاريخ 120 hist120-final-v2.pdf ملخصات الفاينل">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">ملخص الفاينل — تاريخ الأردن الحديث</h3>
+              <p class="item__meta">تاريخ 120 · 15 صفحة · 2.7 م.ب · آخر تحديث 11 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">hist120-final-v2.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="quizzes" data-title="بنك أسئلة الإحصاء — 120 سؤالًا" data-file="stat101-question-bank.zip" data-date="2026-11-16" data-term="first" data-search="بنك أسئلة الإحصاء — 120 سؤالًا إحصاء 101 stat101-question-bank.zip الكويزات">
+            <span class="item__type">ZIP</span>
+            <div class="item__body">
+              <h3 class="item__title">بنك أسئلة الإحصاء — 120 سؤالًا</h3>
+              <p class="item__meta">إحصاء 101 · 120 سؤالًا · 5.6 م.ب · آخر تحديث 16 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">stat101-question-bank.zip</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="quizzes" data-title="كويزات البرمجة (1–5) مع الحلول" data-file="cs110-quizzes-1-5.pdf" data-date="2026-11-13" data-term="first" data-search="كويزات البرمجة (1–5) مع الحلول حاس 110 cs110-quizzes-1-5.pdf الكويزات">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">كويزات البرمجة (1–5) مع الحلول</h3>
+              <p class="item__meta">حاس 110 · 5 كويزات · 2.2 م.ب · آخر تحديث 13 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">cs110-quizzes-1-5.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="quizzes" data-title="أسئلة قصيرة — نظم المعلومات" data-file="mis210-short-questions.pdf" data-date="2026-11-08" data-term="first" data-search="أسئلة قصيرة — نظم المعلومات نظم 210 mis210-short-questions.pdf الكويزات">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">أسئلة قصيرة — نظم المعلومات</h3>
+              <p class="item__meta">نظم 210 · 40 سؤالًا · 1.7 م.ب · آخر تحديث 8 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">mis210-short-questions.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="quizzes" data-title="كويز المحاسبة (1)" data-file="acc101-quiz-1.pdf" data-date="2026-11-04" data-term="first" data-search="كويز المحاسبة (1) محاس 101 acc101-quiz-1.pdf الكويزات">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">كويز المحاسبة (1)</h3>
+              <p class="item__meta">محاس 101 · 25 سؤالًا · 1.1 م.ب · آخر تحديث 4 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">acc101-quiz-1.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="projects" data-title="قالب مشروع التخرج" data-file="graduation-project-template.docx" data-date="2026-11-19" data-term="first" data-search="قالب مشروع التخرج عام graduation-project-template.docx المشروعات">
+            <span class="item__type">DOCX</span>
+            <div class="item__body">
+              <h3 class="item__title">قالب مشروع التخرج</h3>
+              <p class="item__meta">عام · 12 صفحة · 0.8 م.ب · آخر تحديث 19 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">graduation-project-template.docx</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="projects" data-title="تقرير تحليلي — تحليل بيانات" data-file="cs340-data-analysis-report.docx" data-date="2026-11-14" data-term="first" data-search="تقرير تحليلي — تحليل بيانات حاس 340 cs340-data-analysis-report.docx المشروعات">
+            <span class="item__type">DOCX</span>
+            <div class="item__body">
+              <h3 class="item__title">تقرير تحليلي — تحليل بيانات</h3>
+              <p class="item__meta">حاس 340 · 24 صفحة · 3.9 م.ب · آخر تحديث 14 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">cs340-data-analysis-report.docx</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="projects" data-title="عرض تقديمي — ريادة الأعمال" data-file="ent201-business-plan.pptx" data-date="2026-11-10" data-term="first" data-search="عرض تقديمي — ريادة الأعمال ريادة 201 ent201-business-plan.pptx المشروعات">
+            <span class="item__type">PPTX</span>
+            <div class="item__body">
+              <h3 class="item__title">عرض تقديمي — ريادة الأعمال</h3>
+              <p class="item__meta">ريادة 201 · 18 شريحة · 6.1 م.ب · آخر تحديث 10 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">ent201-business-plan.pptx</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="projects" data-title="خطة مشروع — هندسة البرمجيات" data-file="cs320-project-plan.docx" data-date="2026-11-06" data-term="first" data-search="خطة مشروع — هندسة البرمجيات حاس 320 cs320-project-plan.docx المشروعات">
+            <span class="item__type">DOCX</span>
+            <div class="item__body">
+              <h3 class="item__title">خطة مشروع — هندسة البرمجيات</h3>
+              <p class="item__meta">حاس 320 · 16 صفحة · 2.0 م.ب · آخر تحديث 6 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">cs320-project-plan.docx</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="notes" data-title="مذكرات المحاضرات — مبادئ الإحصاء" data-file="stat101-lecture-notes-full.pdf" data-date="2026-11-19" data-term="first" data-search="مذكرات المحاضرات — مبادئ الإحصاء إحصاء 101 stat101-lecture-notes-full.pdf مذكرات المحاضرات">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">مذكرات المحاضرات — مبادئ الإحصاء</h3>
+              <p class="item__meta">إحصاء 101 · 47 محاضرة · 18.4 م.ب · آخر تحديث 19 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">stat101-lecture-notes-full.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="notes" data-title="مذكرات المحاضرات — قواعد البيانات" data-file="cs231-lecture-notes-full.pdf" data-date="2026-11-15" data-term="first" data-search="مذكرات المحاضرات — قواعد البيانات حاس 231 cs231-lecture-notes-full.pdf مذكرات المحاضرات">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">مذكرات المحاضرات — قواعد البيانات</h3>
+              <p class="item__meta">حاس 231 · 42 محاضرة · 16.2 م.ب · آخر تحديث 15 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">cs231-lecture-notes-full.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="notes" data-title="مذكرات المحاضرات — الفيزياء العامة" data-file="phy101-lecture-notes-full.pdf" data-date="2026-11-09" data-term="second" data-search="مذكرات المحاضرات — الفيزياء العامة فيز 101 phy101-lecture-notes-full.pdf مذكرات المحاضرات">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">مذكرات المحاضرات — الفيزياء العامة</h3>
+              <p class="item__meta">فيز 101 · 38 محاضرة · 14.7 م.ب · آخر تحديث 9 نوفمبر 2026</p>
+              <code class="item__file" dir="ltr">phy101-lecture-notes-full.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+          <li class="item" data-cat="notes" data-title="مذكرات المحاضرات — مقدمة في البرمجة" data-file="cs110-lecture-notes-full.pdf" data-date="2026-10-28" data-term="second" data-search="مذكرات المحاضرات — مقدمة في البرمجة حاس 110 cs110-lecture-notes-full.pdf مذكرات المحاضرات">
+            <span class="item__type">PDF</span>
+            <div class="item__body">
+              <h3 class="item__title">مذكرات المحاضرات — مقدمة في البرمجة</h3>
+              <p class="item__meta">حاس 110 · 40 محاضرة · 12.9 م.ب · آخر تحديث 28 أكتوبر 2026</p>
+              <code class="item__file" dir="ltr">cs110-lecture-notes-full.pdf</code>
+            </div>
+            <button class="item__pick" type="button" aria-pressed="false">تحديد</button>
+          </li>
+        </ul>
+        <p class="empty" id="empty" hidden>لا توجد ملفات مطابقة لبحثك. جرّب كلمة أخرى أو أعد ضبط التصفية.</p>
+      </section>
+
+      <aside class="request" id="requestCard" aria-labelledby="requestTitle">
+        <h2 id="requestTitle">طلب التحميل</h2>
+        <p class="request__label">الملف المحدد</p>
+        <p class="request__title" id="selTitle">لم يتم تحديد ملف بعد</p>
+        <p class="request__meta" id="selMeta">اختر ملفًا من القائمة لعرض تفاصيله.</p>
+        <button class="btn-primary" id="prepareBtn" type="button">تجهيز الملف للتحميل</button>
+        <p class="request__msg" id="reqMsg" role="status"></p>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="container">
+    <span>الأرشيف الأكاديمي الرقمي — الجامعة الوطنية الافتراضية</span>
+    <span>آخر تحديث للفهرس: 20 نوفمبر 2026</span>
+  </div>
+</footer>
+
+<!-- ================= شاشة التجهيز ================= -->
+<div class="prep" id="prep" role="dialog" aria-modal="true" aria-labelledby="prepTitle" hidden>
+  <div class="prep__box">
+    <p class="prep__kicker">الأرشيف الأكاديمي الرقمي</p>
+    <h2 id="prepTitle">جارٍ تجهيز الملف</h2>
+    <p class="prep__file" id="prepFile"></p>
+    <div class="prep__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="prepBarWrap">
+      <span id="prepBar"></span>
+    </div>
+    <p class="prep__status" id="prepStatus">التحقق من صلاحية النسخة…</p>
+  </div>
+</div>
+
+<!-- ================= تقرير الجلسة ================= -->
+<section class="report" id="report" aria-labelledby="reportTitle" hidden>
+  <div class="report__inner">
+    <p class="report__kicker">الأرشيف الأكاديمي الرقمي · تقرير آلي</p>
+    <h1 id="reportTitle" tabindex="-1">تقرير الجلسة</h1>
+    <p class="report__date" id="reportDate"></p>
+
+    <dl class="report__rows">
+      <div><dt>الوقت الآن على جهازك</dt><dd id="rTime">—</dd></div>
+      <div><dt>المدة التي أمضيتها هنا تبحث عن طريق مختصر</dt><dd id="rDuration">—</dd></div>
+      <div><dt>عدد المحاولات والنقرات</dt><dd id="rClicks">—</dd></div>
+      <div><dt>الهدف الذي بحثت عنه</dt><dd id="rTarget">—</dd></div>
+    </dl>
+
+    <blockquote id="rQuote"></blockquote>
+
+    <div class="report__actions">
+      <button class="btn-primary" id="saveReceipt" type="button">حفظ إيصال الجلسة</button>
+      <button class="btn-secondary" id="closeAndStudy" type="button">أغلق الصفحة وابدأ الدراسة</button>
+    </div>
+    <p class="report__note" id="receiptNote" role="status"></p>
+  </div>
+</section>
+
+<!-- ================= الشاشة الأخيرة ================= -->
+<div class="blank" id="blank" hidden>
+  <p>الكتاب أمامك.</p>
+</div>
+
+<script src="assets/archive.js"></script>
+</body>
+</html>
