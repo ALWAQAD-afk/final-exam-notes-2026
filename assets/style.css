@@ -450,7 +450,7 @@ legend{font-size:.92rem; font-weight:700; color:var(--paper); margin-bottom:.7re
 .hud__count strong{font-family:var(--serif); color:var(--gold-2); font-size:1.3rem; font-variant-numeric:tabular-nums; line-height:1.2}
 .hud__count--sm strong{font-size:1.05rem; color:var(--paper)}
 .hud__motion{
-  pointer-events:auto; margin-inline-start:auto;
+  pointer-events:auto; margin-inline-start:auto; flex:0 0 auto;
   font-family:var(--sans); font-size:.74rem; color:var(--muted);
   background:rgba(10,16,30,.72); border:1px solid var(--line-soft);
   padding:.4rem .8rem; border-radius:999px; cursor:pointer;

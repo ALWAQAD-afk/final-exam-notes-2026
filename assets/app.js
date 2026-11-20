@@ -363,12 +363,15 @@
   function spawnOne(entry) {
     const el = makeImage(spawnedTotal);
     const w = el.style.width ? parseFloat(el.style.width) : 120;
-    const fromTop = entry === 'top' || Math.random() < 0.62;
+    const burst = entry === 'burst';
+    const fromTop = !burst && (entry === 'top' || Math.random() < 0.62);
 
     const obj = {
       el,
       x: rand(-w * 0.4, width - w * 0.6),
-      y: fromTop ? rand(-height * 0.9, -w * 0.5) : rand(0, height - w * 0.5),
+      y: burst ? rand(-w * 0.2, height - w * 0.6)
+               : fromTop ? rand(-height * 0.9, -w * 0.5)
+                         : rand(0, height - w * 0.5),
       vx: rand(-26, 26),
       vy: fromTop ? rand(26, 74) : rand(-22, 26),
       rot: rand(-18, 18),
@@ -536,7 +539,7 @@
     document.body.classList.add('is-party');
 
     /* الموجة الأولى: تتساقط بدفعات صغيرة لتبدو «تتكاثر» ثم تملأ الشاشة */
-    const burstSize = reduceMotion ? 22 : isSmall() ? 34 : 46;
+    const burstSize = reduceMotion ? 26 : isSmall() ? 40 : 58;
     targetLive = maxLive();
     placeEscapeButton();
     setTimeout(() => escapeBtn.focus({ preventScroll: true }), 500);
@@ -545,7 +548,7 @@
     (function firstWave() {
       if (!partyOn) return;
       if (burst >= burstSize) { grow(); return; }
-      spawnOne('top');
+      spawnOne('burst');
       burst += 1;
       setTimeout(firstWave, reduceMotion ? 90 : 45);
     })();
@@ -585,15 +588,6 @@
   escapeBtn.addEventListener('click', () => {
     if (performance.now() - lastDodgeAt < 400) return;
     onEscapeClick();
-  });
-
-  /* محاولة الاقتراب بلوحة المفاتيح: الزر يهرب أيضًا عند التركيز */
-  escapeBtn.addEventListener('focus', () => {
-    if (!partyOn || closeTries >= 6) return;
-    if (escapeBtn.matches(':focus-visible')) {
-      const r = escapeBtn.getBoundingClientRect();
-      dodgeFrom(r.left + r.width / 2, r.top + r.height / 2);
-    }
   });
 
   let lastEscKey = 0;
@@ -640,4 +634,5 @@
   const qs = new URLSearchParams(location.search);
   if (qs.get('stage') === 'verify') openVerify();
   if (qs.get('stage') === 'party') startParty();
+  if (qs.get('stage') === 'loading') startLoading();
 })();
